@@ -3,7 +3,7 @@ import React from "react";
 class Header extends React.Component {
   render() {
     return (
-      <header className="top" r>
+      <header className="top">
         <h1>
           Catch
           <span className="ofThe">
