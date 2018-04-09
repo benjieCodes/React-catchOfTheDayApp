@@ -13,11 +13,13 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    this.ref = base.syncState(`${this.props.match.params.storeId}/fishes`, {
+    const { params } = this.props.match;
+    this.ref = base.syncState(`${params.storeId}/fishes`, {
       context: this,
       state: "fishes"
     });
   }
+
   // in order to update State, you need to use React's setState API
   addFish = fish => {
     // 1. Take a copy of existing state
