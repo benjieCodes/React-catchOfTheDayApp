@@ -20,6 +20,10 @@ class App extends React.Component {
     });
   }
 
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
+  }
+
   // in order to update State, you need to use React's setState API
   addFish = fish => {
     // 1. Take a copy of existing state
