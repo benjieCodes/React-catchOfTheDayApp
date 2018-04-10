@@ -36,14 +36,6 @@ class App extends React.Component {
     base.removeBinding(this.ref);
   }
 
-  updateFish = (key, updatedFish) => {
-    // 1. Take Copy of current fish
-    const fishes = { ...this.state.fishes };
-    // 2. Update that state
-    fishes[key] = updatedFish;
-    // 3. Set updated fishes to state
-    this.setState({ fishes });
-  };
   // in order to update State, you need to use React's setState API
   addFish = fish => {
     // 1. Take a copy of existing state
@@ -57,12 +49,30 @@ class App extends React.Component {
     console.log("added");
   };
 
+  updateFish = (key, updatedFish) => {
+    // 1. Take Copy of current fish
+    const fishes = { ...this.state.fishes };
+    // 2. Update the state
+    fishes[key] = updatedFish;
+    // 3. Set updated fishes to state
+    this.setState({ fishes });
+  };
+
+  deleteFish = key => {
+    // 1. Take copy of current fish
+    const fishes = { ...this.state.fishes };
+    // 2. Update the state
+    fishes[key] = null;
+    // 3. Set updated state to null
+    this.setState({ fishes });
+  };
+
   loadSampleFish = fishes => {
     this.setState({ fishes: sampleFishes });
   };
 
   addToOrder = key => {
-    // 1. Take a copy of the state
+    // 1. Take a copy of the order state
     const order = { ...this.state.order };
     // 2. Add to the order or update the number in order
     order[key] = order[key] + 1 || 1;
@@ -90,6 +100,7 @@ class App extends React.Component {
         <Inventory
           addFish={this.addFish}
           updateFish={this.updateFish}
+          deleteFish={this.deleteFish}
           loadSampleFish={this.loadSampleFish}
           fishes={this.state.fishes}
         />
