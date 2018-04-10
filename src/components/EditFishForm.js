@@ -2,7 +2,13 @@ import React from "react";
 
 class EditFishForm extends React.Component {
   handleChange = event => {
-    console.log(event.currentTarget.value);
+    console.log(event.currentTarget.name);
+    // update the fish
+    // 1. Create a duplicate of the current fish
+    const updatedFish = {
+      ...this.props.fish,
+      [name]: event.currentTarget.value
+    };
   };
   render() {
     return (
