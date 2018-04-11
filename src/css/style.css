@@ -1,20 +1,20 @@
 .order-enter {
-  -webkit-transform: translateX(-120%);
-          transform: translateX(-120%);
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transform: translateX(-120%) rotate(0);
+          transform: translateX(-120%) rotate(0);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   max-height: 0;
   padding: 0 !important;
 }
 .order-enter.order-enter-active {
   max-height: 60px;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  -webkit-transform: translateX(0) rotate(1440deg);
+          transform: translateX(0) rotate(1440deg);
   padding: 2rem 0 !important;
 }
 .order-exit {
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
@@ -24,8 +24,8 @@
   padding: 0;
 }
 .count-enter {
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
 }
@@ -37,8 +37,8 @@
 .count-exit {
   -webkit-transform: translateY(0);
           transform: translateY(0);
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   position: absolute;
   left: 0;
   bottom: 0;

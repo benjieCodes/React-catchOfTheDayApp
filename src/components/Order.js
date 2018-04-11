@@ -14,7 +14,7 @@ class Order extends React.Component {
         <CSSTransition
           classNames="order"
           key={key}
-          timeout={{ enter: 250, exit: 250 }}
+          timeout={{ enter: 500, exit: 500 }}
         >
           <li key={key}>
             Sorry {fish ? fish.name : "fish"} is not available at the moment.
@@ -34,7 +34,7 @@ class Order extends React.Component {
               <CSSTransition
                 classNames="count"
                 key={count}
-                timeout={{ enter: 250, exit: 250 }}
+                timeout={{ enter: 500, exit: 500 }}
               >
                 <span>{count} </span>
               </CSSTransition>
