@@ -14,7 +14,7 @@ class App extends React.Component {
   };
 
   static propTypes = {
-    match: Proptypes.object
+    match: PropTypes.object
   };
 
   componentDidMount() {
