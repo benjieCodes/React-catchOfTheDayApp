@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { formatPrice } from "../helpers";
 
 class Fish extends React.Component {
+  // used static because it is not a stateless component
   static propTypes = {
     details: PropTypes.shape({
       image: PropTypes.string,
