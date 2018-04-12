@@ -14,6 +14,11 @@ class Inventory extends React.Component {
     loadSampleFish: PropTypes.func.isRequired
   };
 
+  state = {
+    uid: null,
+    owner: null
+  };
+
   authHandler = async authData => {
     // 1. Look up current store in the firebase DB
     const store = await base.fetch(this.props.storeId, { context: this });
@@ -25,6 +30,11 @@ class Inventory extends React.Component {
         data: authData.user.uid
       });
     }
+    // 3. Set the state of the inventory component to reflect the current owner
+    this.setState({
+      uid: authData.user.uid,
+      owner: store.owner || authData.user.uid
+    });
   };
 
   authenticate = provider => {
