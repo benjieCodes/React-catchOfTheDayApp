@@ -4,7 +4,7 @@ import firebase from "firebase";
 import AddFishForm from "./AddFishForm";
 import EditFishForm from "./EditFishForm";
 import Login from "./Login";
-import { firebaseApp } from "../base";
+import base, { firebaseApp } from "../base";
 
 class Inventory extends React.Component {
   static propTypes = {
@@ -15,7 +15,9 @@ class Inventory extends React.Component {
   };
 
   authHandler = async authData => {
-    console.log(authData);
+    // 1. Look up current store in the firebase DB
+    const store = await base.fetch(this.props.storeId, { context: this });
+    console.log(store);
   };
 
   authenticate = provider => {
