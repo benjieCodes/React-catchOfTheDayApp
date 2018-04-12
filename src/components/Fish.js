@@ -12,7 +12,7 @@ class Fish extends React.Component {
       price: PropTypes.number.isRequired,
       status: PropTypes.string.isRequired
     }),
-    addToOder: PropTypes.func.isRequired
+    addToOrder: PropTypes.func.isRequired
   };
   render() {
     const { image, name, price, desc, status } = this.props.fishDetails;
