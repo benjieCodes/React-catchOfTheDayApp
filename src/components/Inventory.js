@@ -6,10 +6,10 @@ import Login from "./Login";
 
 class Inventory extends React.Component {
   static propTypes = {
-    fishes: PropTypes.object,
-    updateFish: PropTypes.func,
-    deleteFish: PropTypes.func,
-    loadSampleFish: PropTypes.func
+    fishes: PropTypes.object.isRequired,
+    updateFish: PropTypes.func.isRequired,
+    deleteFish: PropTypes.func.isRequired,
+    loadSampleFish: PropTypes.func.isRequired
   };
 
   render() {

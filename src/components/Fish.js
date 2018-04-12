@@ -6,13 +6,13 @@ class Fish extends React.Component {
   // used static because it is not a stateless component
   static propTypes = {
     details: PropTypes.shape({
-      image: PropTypes.string,
-      name: PropTypes.string,
-      desc: PropTypes.string,
-      price: PropTypes.number,
-      status: PropTypes.string
+      image: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      desc: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      status: PropTypes.string.isRequired
     }),
-    addToOder: PropTypes.func
+    addToOder: PropTypes.func.isRequired
   };
   render() {
     const { image, name, price, desc, status } = this.props.fishDetails;
