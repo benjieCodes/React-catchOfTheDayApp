@@ -45,11 +45,34 @@ class Inventory extends React.Component {
       .then(this.authHandler);
   };
 
+  logout = async () => {
+    await firebase.auth().signOut();
+    this.setState({ uid: null });
+  };
+
   render() {
-    return <Login authenticate={this.authenticate} />;
+    const logout = <button onClick={this.logout}>Log Out</button>;
+    // check if user is logged in
+    if (!this.state.uid) {
+      return <Login authenticate={this.authenticate} />;
+    }
+
+    // check if they are not the owner
+
+    if (this.state.uid !== this.state.owner) {
+      return (
+        <div>
+          <p>Sorry you are not the owner</p>
+          {logout}
+        </div>
+      );
+    }
+
+    // render inventory if above passes
     return (
       <div className="inventory">
         <h2>Inventory</h2>
+        {logout}
         {Object.keys(this.props.fishes).map(key => (
           <EditFishForm
             fish={this.props.fishes[key]}
